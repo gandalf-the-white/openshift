@@ -1,0 +1,30 @@
+%%%Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{minted}
+\usepackage{xcolor}
+
+\title{API-CDN On Openshift}
+\author{Laurent Valeyre}
+\date{Auguste 2018}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{The Base of Openshift}
+
+\input{base}
+
+\listoffigures
+
+\end{document}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc patch dc/myapp \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}p \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}\PYGZdq{}spec\PYGZdq{}:\PYGZob{}\PYGZdq{}template\PYGZdq{}:\PYGZob{}\PYGZdq{}spec\PYGZdq{}:\PYGZob{}\PYGZdq{}containers\PYGZdq{}:[\PYGZob{}\PYGZdq{}name\PYGZdq{}:\PYGZdq{}default\PYGZhy{}}
+\PYG{l+s+s1}{            container\PYGZdq{},\PYGZdq{}imagePullPolicy\PYGZdq{}:\PYGZdq{}Always\PYGZdq{}\PYGZcb{}]\PYGZcb{}\PYGZcb{}\PYGZcb{}\PYGZcb{}\PYGZsq{}}
+  \PYGZdl{} oc rollout cancel dc/myapp
+\end{Verbatim}

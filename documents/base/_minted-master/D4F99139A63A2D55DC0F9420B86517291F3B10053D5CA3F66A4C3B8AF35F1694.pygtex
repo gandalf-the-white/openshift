@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc new\PYGZhy{}project myproject \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}display\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}My New Project\PYGZsq{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}description\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}My New Project\PYGZsq{}}
+\end{Verbatim}

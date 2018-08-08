@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc create \PYGZhy{}n cicd \PYGZhy{}f \PYG{l+s+se}{\PYGZbs{}}
+  https://raw.githubusercontent.com/devops\PYGZhy{}with\PYGZhy{}openshift/pipeline\PYGZhy{}configs/master/pipeline.yaml
+\end{Verbatim}

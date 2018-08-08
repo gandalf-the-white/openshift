@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  RUN a2enmod status
+  COPY status.conf /etc/apache2/mods\PYGZhy{}enabled/
+\end{Verbatim}

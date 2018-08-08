@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc login \PYGZhy{}u developer \PYGZhy{}p developer
+  \PYGZdl{} oc new\PYGZhy{}project cicd \PYGZhy{}\PYGZhy{}display\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}CICD Jenkins\PYGZsq{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}description\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}CICD Jenkins\PYGZsq{}}
+  \PYGZdl{} oc new\PYGZhy{}project development \PYGZhy{}\PYGZhy{}display\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Development\PYGZsq{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}description\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Development\PYGZsq{}}
+  \PYGZdl{} oc new\PYGZhy{}project testing \PYGZhy{}\PYGZhy{}display\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Testing\PYGZsq{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}description\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Testing\PYGZsq{}}
+  \PYGZdl{} oc new\PYGZhy{}project production \PYGZhy{}\PYGZhy{}display\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Production\PYGZsq{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}description\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Production\PYGZsq{}}
+\end{Verbatim}

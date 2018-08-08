@@ -1,0 +1,28 @@
+\subsection{Create Project}
+\begin{minted}{bash}
+  $ oc new-project myproject \
+  --display-name='My New Project' \
+  --description='My New Project'
+\end{minted}
+
+\subsection{Add or Delete a User from a Project}
+\begin{minted}{bash}
+  $ oc adm policy add-role-to-user edit spike
+  $ oc adm policy remove-role-to-user edit spike
+\end{minted}
+
+\subsection{List of templates, images}
+\begin{minted}{bash}
+  $ oc get tmplates --namespace openshift
+  $ oc get imagestreams --namespace openshift
+  $ oc new-app -L
+\end{minted}
+
+\subsection{Create a Application}
+\begin{minted}{bash}
+  $ oc new-app openshiftkatacoda/blog-django-py --name blog
+  $ oc status
+  $ oc expose service blog
+  $ oc get pod
+  $ oc get all name --selector app=blog
+\end{minted}

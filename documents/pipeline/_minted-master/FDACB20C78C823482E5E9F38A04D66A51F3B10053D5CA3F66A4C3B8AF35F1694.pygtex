@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc policy add\PYGZhy{}role\PYGZhy{}to\PYGZhy{}group system:image\PYGZhy{}puller system:serviceaccounts:testing \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}n development
+  \PYGZdl{} oc policy add\PYGZhy{}role\PYGZhy{}to\PYGZhy{}group system:image\PYGZhy{}puller system:serviceaccounts:production \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}n development
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc project development
+  \PYGZdl{} oc create new\PYGZhy{}app \PYGZhy{}\PYGZhy{}name\PYG{o}{=}myapp \PYG{l+s+se}{\PYGZbs{}}
+  openshift/php:5.6\PYGZti{}https://github.com/devops\PYGZhy{}with\PYGZhy{}openshift/cotd.git\PYGZsh{}master
+  \PYGZdl{} oc expose svc/myapp
+\end{Verbatim}

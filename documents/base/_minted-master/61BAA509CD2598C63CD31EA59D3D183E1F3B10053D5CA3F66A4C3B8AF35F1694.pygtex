@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc new\PYGZhy{}app openshiftkatacoda/blog\PYGZhy{}django\PYGZhy{}py \PYGZhy{}\PYGZhy{}name blog
+  \PYGZdl{} oc status
+  \PYGZdl{} oc expose service blog
+  \PYGZdl{} oc get pod
+  \PYGZdl{} oc get all name \PYGZhy{}\PYGZhy{}selector \PYG{n+nv}{app}\PYG{o}{=}blog
+\end{Verbatim}

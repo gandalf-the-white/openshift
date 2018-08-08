@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc get tmplates \PYGZhy{}\PYGZhy{}namespace openshift
+  \PYGZdl{} oc get imagestreams \PYGZhy{}\PYGZhy{}namespace openshift
+  \PYGZdl{} oc new\PYGZhy{}app \PYGZhy{}L
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc start\PYGZhy{}build pipeline \PYGZhy{}n cicd
+\end{Verbatim}

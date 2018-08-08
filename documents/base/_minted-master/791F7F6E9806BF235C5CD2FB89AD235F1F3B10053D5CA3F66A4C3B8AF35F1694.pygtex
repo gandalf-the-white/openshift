@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc adm policy add\PYGZhy{}role\PYGZhy{}to\PYGZhy{}user edit spike
+  \PYGZdl{} oc adm policy remove\PYGZhy{}role\PYGZhy{}to\PYGZhy{}user edit spike
+\end{Verbatim}

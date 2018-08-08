@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc project cicd
+  \PYGZdl{} oc new\PYGZhy{}app \PYGZhy{}\PYGZhy{}template\PYG{o}{=}openshift/jenkins\PYGZhy{}persistent
+  \PYGZdl{} oc status
+\end{Verbatim}

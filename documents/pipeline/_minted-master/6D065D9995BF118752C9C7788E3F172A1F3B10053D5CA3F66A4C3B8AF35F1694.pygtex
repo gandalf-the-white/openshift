@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc project testing
+  \PYGZdl{} oc create deploymentconfig \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}image\PYG{o}{=} \PYG{l+m}{172}.30.1.1:5000/development/myapp:promoteQA myapp
+  \PYGZdl{} oc rollout cancel dc/myapp
+\end{Verbatim}

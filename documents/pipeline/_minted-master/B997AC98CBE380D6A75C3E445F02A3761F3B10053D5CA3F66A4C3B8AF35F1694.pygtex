@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc expose dc myapp \PYGZhy{}\PYGZhy{}port\PYG{o}{=}\PYG{l+m}{8080}
+  \PYGZdl{} oc expose svc/myapp
+\end{Verbatim}

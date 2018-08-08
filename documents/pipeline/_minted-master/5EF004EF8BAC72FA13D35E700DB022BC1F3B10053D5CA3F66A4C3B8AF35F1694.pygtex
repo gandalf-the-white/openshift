@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc get imagestream \PYGZhy{}n development
+  NAME      DOCKER REPO                         TAGS      UPDATED
+  myapp     \PYG{l+m}{172}.30.1.1:5000/development/myapp
+\end{Verbatim}

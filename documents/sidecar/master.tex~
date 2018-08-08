@@ -1,0 +1,27 @@
+%%%Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{minted}
+\usepackage{xcolor}
+
+\title{Side Car On Openshift}
+\author{Laurent Valeyre}
+\date{Auguste 2018}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{The Project}
+
+\input{sidecar}
+
+\end{document}

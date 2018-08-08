@@ -1,0 +1,38 @@
+\subsection{Status On Apache}
+
+\emph{status.conf}
+\begin{minted}{html}
+  <Location /server-status>
+  SetHandler server-status
+  Order deny,allow
+  Allow from all
+  </Location> ExtendedStatus On
+\end{minted}
+
+and  \emph{Dockerfile}
+\begin{minted}[bgcolor=orange]{bash}
+  RUN a2enmod status
+  COPY status.conf /etc/apache2/mods-enabled/
+\end{minted}
+
+\subsection{New Project}
+
+Firstly, we create a new project.
+
+\begin{minted}{bash}
+  $ oc new-project sidecar \
+  --display-name='Side Car Project' \
+  --description='Side Car Project'
+\end{minted}
+
+\subsection{New Application}
+
+We create a new application
+
+\begin{minted}{bash}
+  $ oc new-app https://gitlab.forge.orange-labs.fr/laov6410/cdnselect.git --name cdnselect
+  $ oc status
+  $ oc expose service cdnselect
+  $ oc get pod
+  $ oc get all name --selector app=cdnselect
+\end{minted}
