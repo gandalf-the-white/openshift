@@ -1,19 +1,33 @@
 \subsection{Status On Apache}
 
 \emph{status.conf}
-\begin{minted}{apache}
+\begin{apachecode*}{}
   <Location /server-status>
   SetHandler server-status
   Order deny,allow
   Allow from all
   </Location> ExtendedStatus On
-\end{minted}
+\end{apachecode*}
 
 and  \emph{Dockerfile}
-\begin{minted}{docker}
+
+\begin{dockercode*}{}
   RUN a2enmod status
   COPY status.conf /etc/apache2/mods-enabled/
+\end{dockercode*}
+
+\subsection{Private Key}
+
+We save the \emph{gitlab private key} before to create the application
+
+\begin{minted}{bash}
+  $ oc secrets new-sshauth sshsecret --ssh-privatekey=$HOME/.ssh/id_rsa
+  $ oc secrets link builder sshsecret
+  $ oc annotate secret/sshsecret \
+  'build.openshift.io/source-secret-match-uri-1=ssh://gitlab.com/osevg/private-repo.git'
+  $ oc new-app httpd~git@gitlab.com:osevg/private-repo.git --name mysite
 \end{minted}
+
 
 \subsection{New Project}
 
@@ -30,7 +44,8 @@ Firstly, we create a new project.
 We create a new application
 
 \begin{minted}{bash}
-  $ oc new-app https://gitlab.forge.orange-labs.fr/laov6410/cdnselect.git --name cdnselect
+  $ oc new-app https://gitlab.forge.orange-labs.fr/ \
+  laov6410/cdnselect.git --name cdnselect
   $ oc status
   $ oc expose service cdnselect
   $ oc get pod

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc secrets new\PYGZhy{}sshauth sshsecret \PYGZhy{}\PYGZhy{}ssh\PYGZhy{}privatekey\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}HOME}/.ssh/id\PYGZus{}rsa
+  \PYGZdl{} oc secrets link builder sshsecret
+  \PYGZdl{} oc annotate secret/sshsecret \PYG{l+s+se}{\PYGZbs{}}
+  \PYG{l+s+s1}{\PYGZsq{}build.openshift.io/source\PYGZhy{}secret\PYGZhy{}match\PYGZhy{}uri\PYGZhy{}1=ssh://gitlab.com/osevg/private\PYGZhy{}repo.git\PYGZsq{}}
+  \PYGZdl{} oc new\PYGZhy{}app httpd\PYGZti{}git@gitlab.com:osevg/private\PYGZhy{}repo.git \PYGZhy{}\PYGZhy{}name mysite
+\end{Verbatim}
