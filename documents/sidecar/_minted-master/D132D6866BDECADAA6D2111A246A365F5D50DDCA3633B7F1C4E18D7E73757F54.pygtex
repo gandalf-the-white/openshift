@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{l+lScalar+lScalarPlain}{apiVersion}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{v1}
+  \PYG{l+lScalar+lScalarPlain}{kind}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{Secret}
+  \PYG{l+lScalar+lScalarPlain}{metadata}\PYG{p+pIndicator}{:}
+  \PYG{l+lScalar+lScalarPlain}{name}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{github\PYGZhy{}secret}
+  \PYG{l+lScalar+lScalarPlain}{namespace}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{sidecar}
+  \PYG{l+lScalar+lScalarPlain}{type}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{kubernetes.io/basic\PYGZhy{}auth}
+  \PYG{l+lScalar+lScalarPlain}{data}\PYG{p+pIndicator}{:}
+  \PYG{l+lScalar+lScalarPlain}{username}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{c3Bpa2U=}
+  \PYG{l+lScalar+lScalarPlain}{password}\PYG{p+pIndicator}{:} \PYG{l+lScalar+lScalarPlain}{dmFsZW50aW5l}
+\end{Verbatim}

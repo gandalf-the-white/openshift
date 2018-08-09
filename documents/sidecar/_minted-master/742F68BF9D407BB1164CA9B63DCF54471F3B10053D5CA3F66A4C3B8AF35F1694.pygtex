@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-  \PYGZdl{} oc new\PYGZhy{}app https://gitlab.forge.orange\PYGZhy{}labs.fr/ \PYG{l+s+se}{\PYGZbs{}}
-  laov6410/cdnselect.git \PYGZhy{}\PYGZhy{}name cdnselect
-  \PYGZdl{} oc status
-  \PYGZdl{} oc expose service cdnselect
-  \PYGZdl{} oc get pod
-  \PYGZdl{} oc get all name \PYGZhy{}\PYGZhy{}selector \PYG{n+nv}{app}\PYG{o}{=}cdnselect
-\end{Verbatim}

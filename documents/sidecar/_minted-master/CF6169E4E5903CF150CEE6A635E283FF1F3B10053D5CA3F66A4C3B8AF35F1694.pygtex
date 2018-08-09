@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZhy{} name: apache\PYGZhy{}exporter
+  image: previousnext/apache\PYGZhy{}exporter
+  command: \PYG{o}{[} \PYG{l+s+s2}{\PYGZdq{}apache\PYGZus{}exporter\PYGZdq{}}, \PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}scrape\PYGZus{}uri\PYGZdq{}}, \PYG{l+s+s2}{\PYGZdq{}http://127.0.0.1:8080/server\PYGZhy{}status/?auto\PYGZdq{}} \PYG{o}{]}
+  ports:
+  \PYGZhy{} containerPort: \PYG{l+m}{9117}
+\end{Verbatim}

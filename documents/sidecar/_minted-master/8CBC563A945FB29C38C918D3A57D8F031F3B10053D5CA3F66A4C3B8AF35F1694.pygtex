@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc new\PYGZhy{}app faye \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}name fayeapp
+  \PYGZdl{} oc status
+  \PYGZdl{} oc expose service faye
+  \PYGZdl{} oc get pod
+  \PYGZdl{} oc get all name \PYGZhy{}\PYGZhy{}selector \PYG{n+nv}{app}\PYG{o}{=}cdnselect
+\end{Verbatim}

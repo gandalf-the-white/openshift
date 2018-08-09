@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc new\PYGZhy{}build http://192.168.0.8:8880/spike/faye.git \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}name faye
+\end{Verbatim}

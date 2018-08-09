@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} \PYG{n+nb}{echo} \PYGZhy{}n \PYG{l+s+s1}{\PYGZsq{}spike\PYGZsq{}} \PYG{p}{|} base64
+  \PYG{n+nv}{c3Bpa2U}\PYG{o}{=}
+  \PYGZdl{} \PYG{n+nb}{echo} \PYGZhy{}n \PYG{l+s+s1}{\PYGZsq{}valentine\PYGZsq{}} \PYG{p}{|} base64
+  dmFsZW50aW5l
+\end{Verbatim}

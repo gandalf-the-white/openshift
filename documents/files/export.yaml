@@ -1,0 +1,219 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewBuild
+    creationTimestamp: 2018-08-09T19:49:51Z
+    generation: 1
+    labels:
+      build: faye
+    name: faye
+    namespace: sidecar
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: ""
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewBuild
+      openshift.io/image.dockerRepositoryCheck: 2018-08-09T19:49:53Z
+    creationTimestamp: 2018-08-09T19:49:51Z
+    generation: 2
+    labels:
+      build: faye
+    name: ubuntu
+    namespace: sidecar
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations:
+        openshift.io/imported-from: ubuntu:latest
+      from:
+        kind: DockerImage
+        name: ubuntu:latest
+      generation: 2
+      importPolicy: {}
+      name: latest
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: ""
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewBuild
+    creationTimestamp: 2018-08-09T19:49:51Z
+    labels:
+      build: faye
+    name: faye
+    namespace: sidecar
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: faye:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      git:
+        uri: http://192.168.0.8:8880/spike/faye.git
+      sourceSecret:
+        name: gitlab-secret
+      type: Git
+    strategy:
+      dockerStrategy:
+        from:
+          kind: ImageStreamTag
+          name: ubuntu:latest
+      type: Docker
+    successfulBuildsHistoryLimit: 5
+    triggers:
+    - github:
+        secret: -sFpqvH1ZtjwSybAZkRI
+      type: GitHub
+    - generic:
+        secret: CSGghgKGL2kTVIr8l5Nc
+      type: Generic
+    - type: ConfigChange
+    - imageChange:
+      type: ImageChange
+  status:
+    lastVersion: 1
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: 2018-08-09T19:50:00Z
+    generation: 2
+    labels:
+      app: faye
+    name: faye
+    namespace: sidecar
+  spec:
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      app: faye
+      deploymentconfig: faye
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: faye
+          deploymentconfig: faye
+      spec:
+        containers:
+        - image: faye
+          imagePullPolicy: Always
+          name: faye
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        - name: apache-exporter
+          image: previousnext/apache-exporter
+          command: [ "apache_exporter", "-scrape_uri", "http://127.0.0.1:8080/server-status/?auto" ]
+          ports:
+          - containerPort: 9117
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - faye
+        from:
+          kind: ImageStreamTag
+          name: faye:latest
+          namespace: sidecar
+        lastTriggeredImage: 172.30.1.1:5000/sidecar/faye@sha256:0042f113417a7566ba423f522d2075d6e8283c54f1c8501970185a754e3ea2c9
+      type: ImageChange
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: 2018-08-09T19:50:06Z
+      lastUpdateTime: 2018-08-09T19:50:06Z
+      message: Deployment config has minimum availability.
+      status: "True"
+      type: Available
+    - lastTransitionTime: 2018-08-09T19:50:07Z
+      lastUpdateTime: 2018-08-09T19:50:07Z
+      message: replication controller "faye-1" successfully rolled out
+      reason: NewReplicationControllerAvailable
+      status: "True"
+      type: Progressing
+    details:
+      causes:
+      - type: ConfigChange
+      message: config change
+    latestVersion: 1
+    observedGeneration: 2
+    readyReplicas: 1
+    replicas: 1
+    unavailableReplicas: 0
+    updatedReplicas: 1
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: 2018-08-09T19:50:00Z
+    labels:
+      app: faye
+    name: faye
+    namespace: sidecar
+    resourceVersion: "70388"
+    selfLink: /api/v1/namespaces/sidecar/services/faye
+    uid: 66e004b9-9c0d-11e8-a75a-d6d2c3f666f9
+  spec:
+    clusterIP: 172.30.7.204
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 9117-tcp
+      port: 9117
+      protocol: TCP
+      targetPort: 9117
+    selector:
+      app: faye
+      deploymentconfig: faye
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZhy{} name: \PYG{l+m}{9117}\PYGZhy{}tcp
+  port: \PYG{l+m}{9117}
+  protocol: TCP
+  targetPort: \PYG{l+m}{9117}
+\end{Verbatim}

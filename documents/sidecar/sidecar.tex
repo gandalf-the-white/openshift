@@ -1,3 +1,5 @@
+\section{The Project}
+
 \subsection{Status On Apache}
 
 \emph{status.conf}
@@ -16,22 +18,40 @@ and  \emph{Dockerfile}
   COPY status.conf /etc/apache2/mods-enabled/
 \end{dockercode*}
 
-\subsection{Private Key}
+\subsection{Secret Access}
 
-We save the \emph{gitlab private key} before to create the application
+We firstly define our \emph{secret file}
+
+\begin{yamlcode*}{}
+  apiVersion: v1
+  kind: Secret
+  metadata:
+  name: github-secret
+  namespace: sidecar
+  type: kubernetes.io/basic-auth
+  data:
+  username: c3Bpa2U=
+  password: dmFsZW50aW5l
+\end{yamlcode*}
+
+\emph{username} and \emph{password} are defined with the command
 
 \begin{minted}{bash}
-  $ oc secrets new-sshauth sshsecret --ssh-privatekey=$HOME/.ssh/id_rsa
-  $ oc secrets link builder sshsecret
-  $ oc annotate secret/sshsecret \
-  'build.openshift.io/source-secret-match-uri-1=ssh://gitlab.com/osevg/private-repo.git'
-  $ oc new-app httpd~git@gitlab.com:osevg/private-repo.git --name mysite
+  $ echo -n 'spike' | base64
+  c3Bpa2U=
+  $ echo -n 'valentine' | base64
+  dmFsZW50aW5l
 \end{minted}
 
+and we run
+
+\begin{minted}{bash}
+  $ oc create -f gitlab-secret.yaml
+\end{minted}
 
 \subsection{New Project}
 
-Firstly, we create a new project.
+Firstly, we create a new project
 
 \begin{minted}{bash}
   $ oc new-project sidecar \
@@ -39,15 +59,77 @@ Firstly, we create a new project.
   --description='Side Car Project'
 \end{minted}
 
-\subsection{New Application}
+\subsection{New Build}
 
-We create a new application
+To obtain our image, we firstly
+\begin{minted}{bash}
+  $ oc new-build http://192.168.0.8:8880/spike/faye.git \
+  --name faye
+\end{minted}
+
+But to resolve the issue based on the credential, we'll attribute the \emph{login/password} defined before and retstart the build process.
 
 \begin{minted}{bash}
-  $ oc new-app https://gitlab.forge.orange-labs.fr/ \
-  laov6410/cdnselect.git --name cdnselect
+  $ oc set build-secret --source bc/faye github-secret
+  $ oc start-build faye
+\end{minted}
+
+or directly
+\begin{minted}{bash}
+  $  oc new-build http://192.168.0.8:8880/spike/faye.git \
+  --source-secret github-secret
+  --name faye
+\end{minted}
+
+\subsection{New Application}
+
+It's time to create our application
+
+\begin{minted}{bash}
+  $ oc new-app faye \
+  --name fayeapp
   $ oc status
-  $ oc expose service cdnselect
+  $ oc expose service faye
   $ oc get pod
   $ oc get all name --selector app=cdnselect
+\end{minted}
+
+\section{The Side Car}
+
+\subsection{Export}
+
+We firstly export our \emph{project}.
+
+\begin{minted}{bash}
+  $ oc get --export is,bc,dc,svc -o yaml > export.yaml
+\end{minted}
+
+\subsection{ImageStream}
+We delete \emph{resourceVersion, selfLink and uid}. In status, we keep dockerImageRepository (set to "")
+
+\subsection{BuildConfig}
+We delete \emph{resourceVersion, selfLink and uid}. We delete in spec.triggers.imageChange \emph{lastTriggeredImageID}
+
+\subsection{DeploymentConfig}
+We replace spec.template.spec.containers.image by \emph{faye} in the first container
+We add in spec.template.spec.container
+
+\begin{minted}{bash}
+  - name: apache-exporter
+  image: previousnext/apache-exporter
+  command: [ "apache_exporter", "-scrape_uri", "http://127.0.0.1:8080/server-status/?auto" ]
+  ports:
+  - containerPort: 9117
+\end{minted}
+
+\subsection{Service}
+We delete \emph{resourceVersion, selfLink and uid}.
+
+We add in spec.ports
+
+\begin{minted}{bash}
+  - name: 9117-tcp
+  port: 9117
+  protocol: TCP
+  targetPort: 9117
 \end{minted}

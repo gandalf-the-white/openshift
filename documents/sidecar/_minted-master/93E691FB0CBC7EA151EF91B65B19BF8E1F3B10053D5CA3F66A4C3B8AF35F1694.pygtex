@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGZdl{} oc create \PYGZhy{}f gitlab\PYGZhy{}secret.yaml
+\end{Verbatim}
