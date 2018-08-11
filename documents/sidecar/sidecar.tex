@@ -26,12 +26,12 @@ We firstly define our \emph{secret file}
   apiVersion: v1
   kind: Secret
   metadata:
-  name: github-secret
-  namespace: sidecar
+    name: github-secret
+    namespace: sidecar
   type: kubernetes.io/basic-auth
   data:
-  username: c3Bpa2U=
-  password: dmFsZW50aW5l
+    username: c3Bpa2U=
+    password: dmFsZW50aW5l
 \end{yamlcode*}
 
 \emph{username} and \emph{password} are defined with the command

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.9)  9 AUG 2018 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.8.7)  10 AUG 2018 10:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **\input master.tex
-(./master.tex (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+(./master.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size12.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -20,74 +20,69 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/minted/minted.sty
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/fvextra/fvextra.sty
+))))
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2017/07/08 v1.3.1 fvextra - extensions and patches for fancyvr
 b
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count88
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -99,11 +94,11 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count91
 \FV@OutFile=\write3
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count92
 \output=\toks17
@@ -143,7 +138,7 @@ LaTeX Info: Redefining \\ on input line 3056.
 \FV@LineBox=\box30
 \FV@LineIndentBox=\box31
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count110
 \calc@Bcount=\count111
@@ -156,18 +151,18 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count112
 \calc@Cskip=\skip46
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
 Package shellesc Info: Unrestricted shell escape enabled on input line 67.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -175,7 +170,7 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/catchfile.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
 runsystem(uname -s > "master.w18")...executed.
@@ -184,16 +179,15 @@ runsystem(uname -s > "master.w18")...executed.
 (./master.w18)
 runsystem(rm -- "master.w18")...executed.
 
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
 \integerpart=\count113
 \decimalpart=\count114
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip47
 \fb@frw=\dimen117
@@ -201,7 +195,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen119
 \FrameSep=\dimen120
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count115
 \float@exts=\toks18
@@ -220,10 +214,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 runsystem(mkdir -p _minted-master)...executed.
 
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -241,8 +235,7 @@ runsystem(which pygmentize && touch master.aex)...executed.
 
 runsystem(rm master.aex)...executed.
 
-
-(./master.aux)
+ (./master.aux)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -257,8 +250,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
-(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count119
 \scratchdimen=\dimen121
@@ -271,13 +263,13 @@ LaTeX Font Info:    ... okay on input line 25.
 \MPnumerator=\count123
 \makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks22
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -287,7 +279,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -316,18 +308,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 EE3.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-)
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \openout3 = `master.pyg'.
 
 
 (./_minted-master/BBA2BE38FC20162A4986AB0F2D570EC0AE48A05AB8428E742B07C2DF85105
-384.pygtex [1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+384.pygtex)
 \openout3 = `master.pyg'.
 
+runsystem(pygmentize -l yaml -f latex -P commandprefix=PYG -F tokenmerge -o _mi
+nted-master/7AEB87057639D82540C73E7712AF37915D50DDCA3633B7F1C4E18D7E73757F54.py
+gtex master.pyg)...executed.
 
-(./_minted-master/D132D6866BDECADAA6D2111A246A365F5D50DDCA3633B7F1C4E18D7E73757
+
+(./_minted-master/7AEB87057639D82540C73E7712AF37915D50DDCA3633B7F1C4E18D7E73757
 F54.pygtex)
 \openout3 = `master.pyg'.
 
@@ -343,12 +339,12 @@ F54.pygtex)
 
 
 (./_minted-master/4AF620A36E62C4459C6D033B6DE668EA1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex)
+694.pygtex [2])
 \openout3 = `master.pyg'.
 
 
 (./_minted-master/76BE47536C44C662DB27EF366E76F94B1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex [2])
+694.pygtex)
 \openout3 = `master.pyg'.
 
 
@@ -366,24 +362,15 @@ F54.pygtex)
 694.pygtex)
 \openout3 = `master.pyg'.
 
-runsystem(pygmentize -l bash -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-master/8990FB6949D3B337F05EC10961B16A911F3B10053D5CA3F66A4C3B8AF35F1694.py
-gtex master.pyg)...executed.
-
 
 (./_minted-master/8990FB6949D3B337F05EC10961B16A911F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex)
+694.pygtex [3])
 Overfull \hbox (36.83852pt too wide) in paragraph at lines 111--112
 \OT1/cmr/m/n/12 We delete \OT1/cmr/m/it/12 re-sourceV-er-sion, self-Link and ui
 d\OT1/cmr/m/n/12 . We delete in spec.triggers.imageChange
  []
 
-[3]
 \openout3 = `master.pyg'.
-
-runsystem(pygmentize -l bash -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-master/CF6169E4E5903CF150CEE6A635E283FF1F3B10053D5CA3F66A4C3B8AF35F1694.py
-gtex master.pyg)...executed.
 
 
 (./_minted-master/CF6169E4E5903CF150CEE6A635E283FF1F3B10053D5CA3F66A4C3B8AF35F1
@@ -393,27 +380,27 @@ gtex master.pyg)...executed.
 
 (./_minted-master/CF24F0D12D53DA2787AF0388916104DB1F3B10053D5CA3F66A4C3B8AF35F1
 694.pygtex))
-runsystem(rm _minted-master/CF12DA1000E0B6842423BE5EDC1727E21F3B10053D5CA3F66A4
-C3B8AF35F1694.pygtex)...executed.
+runsystem(rm _minted-master/D132D6866BDECADAA6D2111A246A365F5D50DDCA3633B7F1C4E
+18D7E73757F54.pygtex)...executed.
 
  [4] (./master.aux)
 runsystem(rm master.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5000 strings out of 492649
- 91145 string characters out of 6129623
- 202355 words of memory out of 5000000
- 8766 multiletter control sequences out of 15000+600000
+ 4997 strings out of 494586
+ 90648 string characters out of 6177803
+ 197691 words of memory out of 5000000
+ 8517 multiletter control sequences out of 15000+600000
  9324 words of font info for 33 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 37i,6n,35p,847b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on master.pdf (4 pages, 71955 bytes).
+ 14 hyphenation exceptions out of 8191
+ 37i,6n,35p,847b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on master.pdf (4 pages, 71800 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
