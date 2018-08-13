@@ -80,20 +80,20 @@
   \begin{figure}
     \begin{apachecode}
       <Location /server-status>
-      SetHandler server-status
-      Order deny,allow
-      Allow from all
+        SetHandler server-status
+        Order deny,allow
+        Allow from all
       </Location> ExtendedStatus On>
     \end{apachecode}
     \caption{status.conf}
     
-    This module will be copied in the \emph{/etc/apache2/mods-enabled/} directory.
+    This module has to be copied in the \emph{/etc/apache2/mods-enabled/} directory.
   \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Dockerfile}
-  The \emph{Dockerfile} include the copy of the \emph{Apache} module.\\
+  The \emph{Dockerfile} includes the copy of the \emph{Apache} module\\
   Important to add the switching between \textit{root} and \textit{1001} user
   \begin{figure}
     \begin{dockercode}
@@ -119,12 +119,12 @@
       apiVersion: v1
       kind: Secret
       metadata:
-      name: github-secret
-      namespace: sidecar
+        name: github-secret
+        namespace: sidecar
       type: kubernetes.io/basic-auth
       data:
-      username: c3Bpa2U=
-      password: dmFsZW50aW5l
+        username: c3Bpa2U=
+        password: dmFsZW50aW5l
     \end{yamlcode}
     \caption{gitlab-secret.yaml}
   \end{figure}
@@ -132,7 +132,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Secret Access}
-  The \emph{username} and \emph{password} are coded with this method and we load the new \emph{secret}
+  The \emph{username} and \emph{password} are encoded to Base64 format. Finally we load the new \emph{secret}
   \begin{bashcode}
     $ echo -n 'spike' | base64
     c3Bpa2U=
@@ -177,19 +177,18 @@
   \frametitle{New Application}
   It's time to create our application based on the new image \emph{faye}
   \begin{bashcode}
-    $ oc new-app faye \
-    --name fayeapp
+    $ oc new-app faye --name faye
     $ oc status
     $ oc expose service faye
     $ oc get pod
-    $ oc get all name --selector app=cdnselect
+    $ oc get all name --selector app=faye
   \end{bashcode}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Export}
-  We export the new application to have a base for the next process\\
-  The final application will be based on the export.
+  We export the new application to have a substrat for the next process\\
+  The final application will be based on this modified export.
   \begin{bashcode}
     $ oc get --export is,bc,dc,svc -o yaml > export.yaml
   \end{bashcode}
@@ -208,7 +207,8 @@
 
 \begin{frame}[fragile]
   \frametitle{ImageStream}
-  We delete resourceVersion, selfLink and uid. In status, we keep dockerImageRepository (set to ””)
+  We delete resourceVersion, selfLink and uid. \\
+  In status, we keep dockerImageRepository (set to ””)
   \begin{yamlcode}
     status:                                                                                                           
     dockerImageRepository: "" 
@@ -217,7 +217,8 @@
 
 \begin{frame}[fragile]
   \frametitle{BuildConfig}
-  We delete resourceVersion, selfLink and uid. We delete in spec.triggers.imageChange lastTriggeredImageID
+  We delete resourceVersion, selfLink and uid. \\
+  We delete in spec.triggers.imageChange lastTriggeredImageID
   \begin{yamlcode}
     triggers:                                                                                                       
     - github:                                                                                                       
@@ -239,11 +240,11 @@
     spec:
       containers: 
       - name: apache-exporter
-      image: previousnext/apache-exporter
-      command: [ "apache_exporter", "-scrape_uri", \
-      "http://127.0.0.1:8080/server-status/?auto" ]
-      ports:
-      - containerPort: 9117
+        image: previousnext/apache-exporter
+        command: [ "apache_exporter", "-scrape_uri", \
+        "http://127.0.0.1:8080/server-status/?auto" ]
+        ports:
+        - containerPort: 9117
       ...
   \end{yamlcode}
 \end{frame}
@@ -253,16 +254,11 @@
   We add in spec.ports
   \begin{yamlcode}
     spec:                                                                                                             
-      clusterIP: 172.30.7.204                                                                                         
-      ports:                                                                                                          
-      - name: 8080-tcp                                                                                                
-      port: 8080                                                                                                    
-      protocol: TCP                                                                                                 
-      targetPort: 8080 
+      ...
       - name: 9117-tcp
-      port: 9117
-      protocol: TCP
-      targetPort: 9117
+        port: 9117
+        protocol: TCP
+        targetPort: 9117
   \end{yamlcode}
   The port related to our \emph{exporter apache}
 \end{frame}
@@ -272,7 +268,9 @@
   Finally we create our new application from this \emph{yaml} file
   \begin{bashcode}
     $ oc create -f export.yaml
+    $ oc get svc 
   \end{bashcode}
+  The last command list different services built by our application (8080 and 9117)\\
   Et voila...
 \end{frame}
 
