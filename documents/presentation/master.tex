@@ -8,6 +8,8 @@
 \usetheme{Madrid}
 \usecolortheme{beaver}
 \usepackage{minted}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
 
 \newminted{apache}{fontsize=\scriptsize, 
   numbersep=8pt,
@@ -59,9 +61,17 @@
 
 \frame{\titlepage}
 
-
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 
+\begin{frame}[fragile]
+  \frametitle{Schema}
+\begin{figure}[ht]
+  \caption{schema of a Side Car}
+  \centering
+  \includegraphics[scale=0.6]{SidecarDiagram.png}
+  \label{fig:SidecarDiagram}
+\end{figure}
+\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Apache status}
@@ -109,12 +119,12 @@
       apiVersion: v1
       kind: Secret
       metadata:
-        name: github-secret
-        namespace: sidecar
+      name: github-secret
+      namespace: sidecar
       type: kubernetes.io/basic-auth
       data:
-        username: c3Bpa2U=
-        password: dmFsZW50aW5l
+      username: c3Bpa2U=
+      password: dmFsZW50aW5l
     \end{yamlcode}
     \caption{gitlab-secret.yaml}
   \end{figure}
@@ -199,25 +209,48 @@
 \begin{frame}[fragile]
   \frametitle{ImageStream}
   We delete resourceVersion, selfLink and uid. In status, we keep dockerImageRepository (set to ””)
+  \begin{yamlcode}
+    status:                                                                                                           
+    dockerImageRepository: "" 
+  \end{yamlcode}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{BuildConfig}
   We delete resourceVersion, selfLink and uid. We delete in spec.triggers.imageChange lastTriggeredImageID
+  \begin{yamlcode}
+    triggers:                                                                                                       
+    - github:                                                                                                       
+        secret: -sFpqvH1ZtjwSybAZkRI                                                                                
+      type: GitHub                                                                                                  
+    - generic:                                                                                                      
+      secret: CSGghgKGL2kTVIr8l5Nc                                                                                
+      type: Generic                                                                                                 
+    - type: ConfigChange                                                                                            
+    - imageChange:                                                                                                  
+      type: ImageChange
+  \end{yamlcode}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{BuildConfig}
-  We replace spec.template.spec.containers.image by faye in the first container\\
-  We add in spec.template.spec.container
+  \frametitle{DeploymentConfig}
+  We replace spec.template.spec.containers.image by faye in the first container and we add in spec.template.spec.container
   \begin{yamlcode}
-    - name: apache-exporter
-    image: previousnext/apache-exporter
-    command: [ "apache_exporter", \
-    "-scrape_uri", \
-    "http://127.0.0.1:8080/server-status/?auto" ]
-    ports:
-    - containerPort: 9117
+    spec:
+      containers:
+      - image: faye                                                                                               
+      imagePullPolicy: Always                                                                                   
+      name: faye                                                                                            
+      ports:                                                                                                
+      - containerPort: 8080                                                                                     
+      protocol: TCP 
+      - name: apache-exporter
+      image: previousnext/apache-exporter
+      command: [ "apache_exporter", \
+      "-scrape_uri", \
+      "http://127.0.0.1:8080/server-status/?auto" ]
+      ports:
+      - containerPort: 9117
   \end{yamlcode}
 \end{frame}
 
@@ -225,21 +258,28 @@
   \frametitle{Service}
   We add in spec.ports
   \begin{yamlcode}
-    - name: 9117-tcp
-    port: 9117
-    protocol: TCP
-    targetPort: 9117
+    spec:                                                                                                             
+      clusterIP: 172.30.7.204                                                                                         
+      ports:                                                                                                          
+      - name: 8080-tcp                                                                                                
+      port: 8080                                                                                                    
+      protocol: TCP                                                                                                 
+      targetPort: 8080 
+      - name: 9117-tcp
+      port: 9117
+      protocol: TCP
+      targetPort: 9117
   \end{yamlcode}
-The port related to our \emph{exporter apache}
+  The port related to our \emph{exporter apache}
 \end{frame}
 
 \begin{frame}[fragile]
- \frametitle{Finally}
-We finally create our new application from this \emph{yaml} file
- \begin{bashcode}
+  \frametitle{Finally}
+  Finally we create our new application from this \emph{yaml} file
+  \begin{bashcode}
     $ oc create -f export.yaml
   \end{bashcode}
-Et voila...
+  Et voila...
 \end{frame}
 
 \end{document}
