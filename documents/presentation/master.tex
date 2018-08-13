@@ -55,7 +55,7 @@
 \institute{Cowboy Bebop}
 \date{Auguste 2018}
 
-\logo{\includegraphics[height=0.5cm]{2753308_0.jpg}}
+\logo{\includegraphics[height=0.7cm]{2753308_0.jpg}}
 
 \begin{document}
 
@@ -237,20 +237,14 @@
   We replace spec.template.spec.containers.image by faye in the first container and we add in spec.template.spec.container
   \begin{yamlcode}
     spec:
-      containers:
-      - image: faye                                                                                               
-      imagePullPolicy: Always                                                                                   
-      name: faye                                                                                            
-      ports:                                                                                                
-      - containerPort: 8080                                                                                     
-      protocol: TCP 
+      containers: 
       - name: apache-exporter
       image: previousnext/apache-exporter
-      command: [ "apache_exporter", \
-      "-scrape_uri", \
+      command: [ "apache_exporter", "-scrape_uri", \
       "http://127.0.0.1:8080/server-status/?auto" ]
       ports:
       - containerPort: 9117
+      ...
   \end{yamlcode}
 \end{frame}
 
