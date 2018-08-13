@@ -1,5 +1,0 @@
-\contentsline {section}{\numberline {1}The Base of Openshift}{1}
-\contentsline {subsection}{\numberline {1.1}Create Project}{1}
-\contentsline {subsection}{\numberline {1.2}Add or Delete a User from a Project}{1}
-\contentsline {subsection}{\numberline {1.3}List of templates, images}{1}
-\contentsline {subsection}{\numberline {1.4}Create a Application}{1}

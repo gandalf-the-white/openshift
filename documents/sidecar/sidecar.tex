@@ -117,7 +117,9 @@ We add in spec.template.spec.container
 \begin{minted}{bash}
   - name: apache-exporter
   image: previousnext/apache-exporter
-  command: [ "apache_exporter", "-scrape_uri", "http://127.0.0.1:8080/server-status/?auto" ]
+  command: [ "apache_exporter", \
+  "-scrape_uri", \
+  "http://127.0.0.1:8080/server-status/?auto" ]
   ports:
   - containerPort: 9117
 \end{minted}

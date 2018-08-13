@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.9)  9 AUG 2018 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.9)  13 AUG 2018 16:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -242,7 +242,7 @@ runsystem(which pygmentize && touch master.aex)...executed.
 runsystem(rm master.aex)...executed.
 
 
-(./master.aux)
+No file master.aux.
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -257,7 +257,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count119
@@ -296,18 +295,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 27.
 
-(./master.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
+No file master.toc.
 \tf@toc=\write6
 \openout6 = `master.toc'.
 
- (./sidecar.tex
+(./sidecar.tex
 \openout3 = `master.pyg'.
 
  (./_minted-master/default-pyg-prefix.pygstyle)
@@ -321,14 +313,14 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 
 
 (./_minted-master/BBA2BE38FC20162A4986AB0F2D570EC0AE48A05AB8428E742B07C2DF85105
-384.pygtex [1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+384.pygtex)
 \openout3 = `master.pyg'.
 
 
 (./_minted-master/D132D6866BDECADAA6D2111A246A365F5D50DDCA3633B7F1C4E18D7E73757
-F54.pygtex)
+F54.pygtex [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \openout3 = `master.pyg'.
 
 
@@ -348,7 +340,7 @@ F54.pygtex)
 
 
 (./_minted-master/76BE47536C44C662DB27EF366E76F94B1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex [2])
+694.pygtex)
 \openout3 = `master.pyg'.
 
 
@@ -358,17 +350,13 @@ F54.pygtex)
 
 
 (./_minted-master/08656D15D8525C024A9B5D2C0A20F1EE1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex)
+694.pygtex [2])
 \openout3 = `master.pyg'.
 
 
 (./_minted-master/8CBC563A945FB29C38C918D3A57D8F031F3B10053D5CA3F66A4C3B8AF35F1
 694.pygtex)
 \openout3 = `master.pyg'.
-
-runsystem(pygmentize -l bash -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-master/8990FB6949D3B337F05EC10961B16A911F3B10053D5CA3F66A4C3B8AF35F1694.py
-gtex master.pyg)...executed.
 
 
 (./_minted-master/8990FB6949D3B337F05EC10961B16A911F3B10053D5CA3F66A4C3B8AF35F1
@@ -378,42 +366,37 @@ Overfull \hbox (36.83852pt too wide) in paragraph at lines 111--112
 d\OT1/cmr/m/n/12 . We delete in spec.triggers.imageChange
  []
 
-[3]
 \openout3 = `master.pyg'.
 
 runsystem(pygmentize -l bash -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-master/CF6169E4E5903CF150CEE6A635E283FF1F3B10053D5CA3F66A4C3B8AF35F1694.py
+nted-master/517EE04FF4D6B9954EFB41D3971D90B41F3B10053D5CA3F66A4C3B8AF35F1694.py
 gtex master.pyg)...executed.
 
 
-(./_minted-master/CF6169E4E5903CF150CEE6A635E283FF1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex)
+(./_minted-master/517EE04FF4D6B9954EFB41D3971D90B41F3B10053D5CA3F66A4C3B8AF35F1
+694.pygtex [3])
 \openout3 = `master.pyg'.
 
 
 (./_minted-master/CF24F0D12D53DA2787AF0388916104DB1F3B10053D5CA3F66A4C3B8AF35F1
-694.pygtex))
-runsystem(rm _minted-master/CF12DA1000E0B6842423BE5EDC1727E21F3B10053D5CA3F66A4
-C3B8AF35F1694.pygtex)...executed.
-
- [4] (./master.aux)
+694.pygtex)) [4] (./master.aux)
 runsystem(rm master.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5000 strings out of 492649
- 91145 string characters out of 6129623
- 202355 words of memory out of 5000000
- 8766 multiletter control sequences out of 15000+600000
- 9324 words of font info for 33 fonts, out of 8000000 for 9000
+ 4977 strings out of 492649
+ 90839 string characters out of 6129623
+ 200430 words of memory out of 5000000
+ 8754 multiletter control sequences out of 15000+600000
+ 6579 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,35p,847b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,35p,847b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on master.pdf (4 pages, 71955 bytes).
+Output written on master.pdf (4 pages, 70655 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

@@ -1,0 +1,147 @@
+%%% Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usepackage{minted}
+
+\newminted{apache}{fontsize=\scriptsize, 
+  numbersep=8pt,
+  gobble=4,
+  frame=lines,
+  fontfamily=courier,
+  fontsize=\small,
+  bgcolor=bg,
+  framesep=3mm} 
+
+\newminted{docker}{fontsize=\scriptsize, 
+  numbersep=8pt,
+  gobble=4,
+  frame=lines,
+  fontfamily=courier,
+  fontsize=\small,
+  bgcolor=bg,
+  framesep=3mm} 
+
+\newminted{yaml}{fontsize=\scriptsize, 
+  numbersep=8pt,
+  gobble=4,
+  frame=lines,
+  fontfamily=courier,
+  fontsize=\small,
+  bgcolor=bg,
+  framesep=3mm} 
+
+\newminted{bash}{fontsize=\scriptsize, 
+  numbersep=8pt,
+  gobble=4,
+  frame=lines,
+  fontfamily=courier,
+  fontsize=\small,
+  bgcolor=bg,
+  framesep=3mm} 
+
+% Information to be included in the title page:
+\title{Openshift}
+\subtitle{Introduction to the Side Car}
+\author{Laurent Valeyre}
+\institute{Orange}
+\date{Auguste 2018}
+
+\logo{\includegraphics[height=0.5cm]{2753308_0.jpg}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+
+\begin{frame}[fragile]
+  \frametitle{Apache status}
+  \begin{figure}
+    \begin{apachecode}
+      <Location /server-status>
+      SetHandler server-status
+      Order deny,allow
+      Allow from all
+      </Location> ExtendedStatus On>
+    \end{apachecode}
+    \caption{status.conf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dockerfile}
+  \begin{figure}
+    \begin{dockercode}
+      RUN a2enmod status
+      COPY status.conf /etc/apache2/mods-enabled/
+    \end{dockercode}
+    \caption{Dockerfile}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Secret Access}
+  \begin{figure}
+    \begin{yamlcode}
+      apiVersion: v1
+      kind: Secret
+      metadata:
+      name: github-secret
+      namespace: sidecar
+      type: kubernetes.io/basic-auth
+      data:
+      username: c3Bpa2U=
+      password: dmFsZW50aW5l
+    \end{yamlcode}
+    \caption{gitlab-secret.yaml}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Secret Access}
+  \begin{bashcode}
+    $ echo -n 'spike' | base64
+    c3Bpa2U=
+    $ echo -n 'valentine' | base64
+    dmFsZW50aW5l
+    $ oc create -f gitlab-secret.yaml
+  \end{bashcode}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Project}
+  \begin{bashcode}
+    $ oc new-project sidecar \
+    --display-name='Side Car Project' \
+    --description='Side Car Project'
+  \end{bashcode}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Build}
+  \begin{bashcode}
+    $ oc new-build http://192.168.0.8:8880/spike/faye.git \
+    --name faye
+    $ oc set build-secret --source bc/faye github-secret
+    $ oc start-build faye
+  \end{bashcode}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Build more friendly}
+  \begin{bashcode}
+    $ oc new-build http://192.168.0.8:8880/spike/faye.git \
+    --source-secret github-secret \
+    --name faye
+  \end{bashcode}
+\end{frame}
+
+\end{document}
