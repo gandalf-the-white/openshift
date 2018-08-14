@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-  \PYG{n+nt}{\PYGZlt{}Location} \PYG{l+s}{/server\PYGZhy{}status}\PYG{n+nt}{\PYGZgt{}}
-  \PYG{n+nb}{SetHandler} server\PYGZhy{}status
-  \PYG{n+nb}{Order} deny,allow
-  \PYG{n+nb}{Allow} from \PYG{k}{all}
-  \PYG{n+nt}{\PYGZlt{}/Location\PYGZgt{}} \PYG{n+nb}{ExtendedStatus} \PYG{k}{On}
-\end{Verbatim}

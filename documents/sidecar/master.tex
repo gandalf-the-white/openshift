@@ -10,12 +10,35 @@
 \usepackage{minted}
 \usepackage{xcolor}
 
-\newminted{docker}{frame=single,framesep=10pt,rulecolor=blue}
-\newminted{apache}{frame=single,framesep=10pt,rulecolor=blue}
-\newminted{yaml}{frame=single,framesep=10pt,rulecolor=blue}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
 
-\title{Side Car On Openshift}
-\author{Laurent Valeyre}
+\newminted{docker}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{apache}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{yaml}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{bash}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\title{Side Car With Openshift \\
+\large Draft}
+\author{Spike Spiegel}
 \date{Auguste 2018}
 
 \definecolor{LightGray}{RGB}{211,211,211}
@@ -26,6 +49,7 @@
 
 \maketitle
 \tableofcontents
+\newpage
 
 \input{sidecar}
 
