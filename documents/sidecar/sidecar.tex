@@ -80,7 +80,8 @@ When we create a new application based on this repository, it desn't work. We ha
 $ oc set build-secret --source bc/mysite repo-at-github
 \end{bashcode}
 
- 
+In case of our \emph{GITLAB}, we have to use the login and password based on the \emph{Deploy Tokens}.
+
 \subsection{New Project}
 
 Firstly, we create a new project
@@ -167,3 +168,61 @@ We add in spec.ports
   protocol: TCP
   targetPort: 9117
 \end{bashcode}
+
+\section{Geek Method}
+An other solution concists to create the application without the sidecar, and at the end, we modify the \emph{DeploymentConfig} and \emph{Service}.
+
+\subsection{DeploymentConfig}
+
+The \emph{DeploymentConfig} to add the \emph{exporter-apache} image
+\begin{bashcode}
+$ oc get dc
+$ oc edit dc/faye
+\end{bashcode}
+
+\begin{yamlcode}
+  spec:
+    containers:
+        - command:
+            - apache_exporter
+            - '-scrape_uri'
+            - 'http://127.0.0.1:8080/server-status/?auto'
+          image: previousnext/apache-exporter
+          imagePullPolicy: Always
+          name: apache-exporter
+          ports:
+            - containerPort: 9117
+              protocol: TCP
+        - image: 172.30.220.103:5000/.......
+          imagePullPolicy: Always
+          name: faye
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+\end{yamlcode}
+
+The modification of the \emph{DeploymentConfig} will be followed by a  new \emph{build} of the image.
+
+\subsection{Service}
+
+In the common case, we don't have to modify the service, but in this case, we must access to the exporter service through the port \emph{9117}. 
+\begin{bashcode}
+  $ oc getsvc
+  $ oc edit svc/faye
+\end{bashcode}
+
+\begin{yamlcode}
+spec:
+  ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 9117-tcp
+      port: 9117
+      protocol: TCP
+      targetPort: 9117
+\end{yamlcode}
