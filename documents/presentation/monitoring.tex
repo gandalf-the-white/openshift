@@ -4,9 +4,31 @@
 
 \section{The Monitoring}
 
-\begin{bashcode}
-  $ oc new-app prom/prometheus
-\end{bashcode}
+\begin{frame}[fragile]
+  \frametitle{Pull Image}
+  We pull the image for \emph{Prometheus} from the public Docker Hub registry.
+  \begin{bashcode}
+    $ oc new-app prom/prometheus
+    $ oc expose service prometheus
+  \end{bashcode}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Image and configuration decoupled}
+  \begin{yamlcode}
+    global:
+      scrape_interval:     5s 
+      evaluation_interval: 5s 
+
+    scrape_configs:
+      - job_name: 'apache-exporter'
+        scheme: http
+        static_configs:
+        - targets: ['faye:9117']
+          labels: {'host': 'cOmerade'}
+
+  \end{yamlcode}
+\end{frame}
 
 \subsection{Prometheus}
 
