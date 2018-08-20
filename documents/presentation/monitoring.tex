@@ -78,15 +78,17 @@
   \frametitle{DeploymentConfig and ConfigMap}
   Modification in \emph{spec-containers}
   \begin{yamlcode}
+    - image:
+      ...
+      volumeMounts:
+      - name: grafana-config
+        mountPath: /etc/grafana/
+      ...
+    volumes:
     - name: grafana-config
       configMap:
         name: grafana-config
         defaultMode: 420
-  \end{yamlcode}
-
-  \begin{yamlcode}
-    - name: grafana-config
-      mountPath: /etc/grafana/
   \end{yamlcode}
 \end{frame}
 
