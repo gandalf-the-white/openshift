@@ -1,0 +1,15 @@
+spec:
+  containers:
+  - name: apache-exporter
+    image: previousnext/apache-exporter
+    command: [ "apache_exporter", "-scrape_uri", \
+    "http://127.0.0.1:8080/server-status/?auto" ]
+    ports:
+    - containerPort: 9117
+
+
+spec:
+  - name: 9117-tcp
+    port: 9117
+    protocol: TCP
+    targetPort: 9117
