@@ -70,13 +70,13 @@
   \begin{bashcode}
     $ oc create configmap grafana-config \
     --from-file=grafana.ini
-    $ oc edit dc/prometheus
+    $ oc edit dc/grafana
   \end{bashcode}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{DeploymentConfig and ConfigMap}
-
+  Modification in \emph{spec-containers}
   \begin{yamlcode}
     - name: grafana-config
       configMap:
