@@ -1,15 +1,22 @@
 \section{The Project}
 
+\subsection{Introduction}
+
+The \emph{Sidecar container} or \emph{adapter container} or \emph{ambassador container} concept provide a separation and focus on services that reduces spaghetti dependencies and untestable components. Building an application from modular containers means thinking about symbiotic groups of containers that cooperate to provide a service, not one container per service. In Kubernetes, the embodiment of this modular container service is a Pod.\\
+
+A Pod is a group of containers that share resources like file systems, kernel namespaces and an IP address. The Pod is the atomic unit of scheduling in a Kubernetes cluster.
+
 \subsection{schema}
 
 \begin{figure}[ht]
-  \caption{diagram of different projects}
+  \caption{sidecar diagram}
   \centering
   \includegraphics[scale=0.6]{SidecarDiagram.png}
   \label{fig:SidecarDiagram}
 \end{figure}
 
-A sidecar architecture is based on 2 containers, the main application and its addon. The objectif concists of only one process per container. In our case, the main application is the apache server and the addon is the exporter-apache. The containers share the same memory space, the same network stack, easily to deploy and manage the access from exporter-apache to apache server.
+Sidecar containers extends and enhance the \emph{main} container, they take existing container and make them better. As an exemple, consider a container that runs the Apache web server. Add a different container that provide statistics of the system with a exporter and you have built exporter to deploy. But you've done it in a modular manner where the exporter can be built by a different team.
+
 \subsection{Status On Apache}
 
 \emph{status.conf}

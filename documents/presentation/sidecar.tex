@@ -2,15 +2,9 @@
 %%% TeX-command-extra-options: "-shell-escape"
 %%% End:
 
-\begin{frame}[fragile]
-  \frametitle{Schema}
-\begin{figure}[ht]
-  \caption{schema of a Side Car}
-  \centering
-  \includegraphics[scale=0.6]{SidecarDiagram.png}
-  \label{fig:SidecarDiagram}
-\end{figure}
-\end{frame}
+\section{Use case}
+
+\subsection{Apache Status}
 
 \begin{frame}[fragile]
   \frametitle{Apache status}
@@ -30,6 +24,8 @@
   \end{figure}
 \end{frame}
 
+\subsection{Dockerfile}
+
 \begin{frame}[fragile]
   \frametitle{Dockerfile}
   The \emph{Dockerfile} includes the copy of the \emph{Apache} module\\
@@ -47,8 +43,9 @@
     \end{dockercode}
     \caption{Dockerfile}
   \end{figure}
-
 \end{frame}
+
+\subsection{Secret Access}
 
 \begin{frame}[fragile]
   \frametitle{Secret Access}
@@ -68,6 +65,8 @@
     \caption{gitlab-secret.yaml}
   \end{figure}
 \end{frame}
+
+\subsection{The application}
 
 \begin{frame}[fragile]
   \frametitle{Secret Access}
@@ -102,6 +101,8 @@
     $ oc get all name --selector app=sidecar
   \end{bashcode}
 \end{frame}
+
+\subsection{Deployment and Service}
 
 \begin{frame}[fragile]
   \frametitle{Item To Modify}
