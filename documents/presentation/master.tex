@@ -11,6 +11,14 @@
 \usepackage{graphicx}
 \graphicspath{{./images/}}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
 \newminted{apache}{fontsize=\scriptsize, 
   numbersep=8pt,
   gobble=4,
@@ -74,5 +82,7 @@
 \input{sidecar}
 
 \input{monitoring}
+
+\input{link}
 
 \end{document}
