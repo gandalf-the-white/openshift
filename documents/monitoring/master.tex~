@@ -1,0 +1,56 @@
+%%%Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{minted}
+\usepackage{xcolor}
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\newminted{docker}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{apache}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{yaml}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\newminted{bash}{
+  bgcolor=bg,
+  frame=single,
+  framesep=10pt,
+  rulecolor=blue}
+
+\title{Side Car With Openshift \\
+\large Patterns for composite Containers}
+\author{Laurent Valeyre}
+\date{August 2018}
+
+\definecolor{LightGray}{RGB}{211,211,211}
+\definecolor{monokaibg}{HTML}{272822}
+\definecolor{friendlybg}{HTML}{f0f0f0}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\input{sidecar}
+
+\end{document}

@@ -1,0 +1,24 @@
+%%%Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+
+\section{Introduction}
+
+\section{Prometheus}
+
+\subsection{Install}
+
+\begin{bashcode}
+  $ oc new-app prom/prometheus
+  $ oc expose service prometheus
+\end{bashcode}
+
+\section{Grafana}
+
+\subsection{Install}
+
+\begin{bashcode}
+  $ oc new-app grafana/grafana
+  $ oc expose service grafana
+\end{bashcode}

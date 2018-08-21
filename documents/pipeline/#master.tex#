@@ -1,0 +1,31 @@
+%%% Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{minted}
+\usepackage{xcolor}
+
+
+\title{API-CDN On Openshift}
+\author{Spike Spiegel}
+\date{Auguste 2018}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Multiple Projects Pipeline}
+
+\input{pipeline}
+
+\listoffigures
+
+\end{document}
