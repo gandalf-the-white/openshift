@@ -56,7 +56,7 @@
       kind: Secret
       metadata:
         name: gitlab-secret
-        namespace: sidecar
+        namespace: cdnapi
       type: kubernetes.io/basic-auth
       data:
         username: c3Bpa2U=
@@ -67,6 +67,16 @@
 \end{frame}
 
 \subsection{The application}
+
+\begin{frame}[fragile]
+  \frametitle{New Project}
+  It's time to create our new project \emph{cdnapi}, similar to a namespace
+  \begin{bashcode}
+    $ oc new-project cdnapi \
+    --display-name='CDN API Project' \
+    --description='CDN API Project'
+  \end{bashcode}
+\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Secret Access}
@@ -81,24 +91,14 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{New Project}
-  It's time to create our new project \emph{sidecar}, similar to a namespace
-  \begin{bashcode}
-    $ oc new-project sidecar \
-    --display-name='Side Car Project' \
-    --description='Side Car Project'
-  \end{bashcode}
-\end{frame}
-
-\begin{frame}[fragile]
   \frametitle{New Application}
   It's time to create our application
   \begin{bashcode}
     $ oc new-app https://gitlab.forge.orange-labs.fr/\
-    laov6410/cdnselect.git --name sidecar
-    $ oc set build-secret --source bc/sidecar gitlab-secret
-    $ oc expose service sidecar
-    $ oc get all name --selector app=sidecar
+    laov6410/cdnselect.git --name 
+    $ oc set build-secret --source bc/cdnapi gitlab-secret
+    $ oc expose service cdnapi
+    $ oc get all name --selector app=cdnapi
   \end{bashcode}
 \end{frame}
 
@@ -117,7 +117,7 @@
   \frametitle{DeploymentConfig}
   We edit \emph{DeploymentConfig}
   \begin{bashcode}
-    $ oc edit dc/sidecar
+    $ oc edit dc/cdnapi
   \end{bashcode}
   and we add
   \begin{yamlcode}
@@ -136,7 +136,7 @@
   \frametitle{Service}
   We edit \emph{service}
   \begin{bashcode}
-    $ oc edit svc/sidecar
+    $ oc edit svc/cdnapi
   \end{bashcode}
 
   \begin{yamlcode}
@@ -154,10 +154,10 @@
   \frametitle{Finally}
   Finally we create our new application from this \emph{yaml} file
   \begin{bashcode}
-    $ oc get svc --selector "app=selector"
+    $ oc get svc --selector "app=cdnapi"
     NAME      TYPE        CLUSTER-IP      PORT(S)           
     selector  ClusterIP   172.30.127.98   8080/TCP,9117/TCP
-    $ oc describe dc/sidecar
+    $ oc describe dc/cdnapi
   \end{bashcode}
   Et voila...
 \end{frame}

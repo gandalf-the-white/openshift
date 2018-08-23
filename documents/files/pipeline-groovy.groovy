@@ -1,36 +1,36 @@
 node('maven') {
   stage 'build & deploy in dev'
   openshiftBuild(namespace: 'development',
-  			    buildConfig: 'myapp',
+  			    buildConfig: 'cdnapi',
 			    showBuildLogs: 'true',
 			    waitTime: '3000000')
   
   stage 'verify deploy in dev'
   openshiftVerifyDeployment(namespace: 'development',
-				       depCfg: 'myapp',
+				       depCfg: 'cdnapi',
 				       replicaCount:'1',
 				       verifyReplicaCount: 'true',
 				       waitTime: '300000')
   
   stage 'deploy in test'
   openshiftTag(namespace: 'development',
-  			  sourceStream: 'myapp',
+  			  sourceStream: 'cdnapi',
 			  sourceTag: 'latest',
-			  destinationStream: 'myapp',
+			  destinationStream: 'cdnapi',
 			  destinationTag: 'promoteQA')
   
   openshiftDeploy(namespace: 'testing',
-  			     deploymentConfig: 'myapp',
+  			     deploymentConfig: 'cdnapi',
 			     waitTime: '300000')
 
   openshiftScale(namespace: 'testing',
-  			     deploymentConfig: 'myapp',
+  			     deploymentConfig: 'cdnapi',
 			     waitTime: '300000',
 			     replicaCount: '2')
   
   stage 'verify deploy in test'
   openshiftVerifyDeployment(namespace: 'testing',
-				       depCfg: 'myapp',
+				       depCfg: 'cdnapi',
 				       replicaCount:'2',
 				       verifyReplicaCount: 'true',
 				       waitTime: '300000')
@@ -41,24 +41,24 @@ node('maven') {
  }
 
   openshiftTag(namespace: 'development',
-  			  sourceStream: 'myapp',
+  			  sourceStream: 'cdnapi',
 			  sourceTag: 'promoteQA',
-			  destinationStream: 'myapp',
+			  destinationStream: 'cdnapi',
 			  destinationTag: 'promotePRD')
 
   
   openshiftDeploy(namespace: 'production',
-  			     deploymentConfig: 'myapp',
+  			     deploymentConfig: 'cdnapi',
 			     waitTime: '300000')
   
   openshiftScale(namespace: 'production',
-  			     deploymentConfig: 'myapp',
+  			     deploymentConfig: 'cdnapi',
 			     waitTime: '300000',
 			     replicaCount: '2')
   
   stage 'verify deploy in production'
   openshiftVerifyDeployment(namespace: 'production',
-				       depCfg: 'myapp',
+				       depCfg: 'cdnapi',
 				       replicaCount:'2',
 				       verifyReplicaCount: 'true',
 				       waitTime: '300000')

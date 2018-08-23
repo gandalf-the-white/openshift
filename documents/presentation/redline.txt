@@ -1,0 +1,5 @@
+
+vi Documents/openshift/documents/files/gitlab-secret.yaml
+
+oc new-app https://gitlab.forge.orange-labs.fr/laov6410/cdnselect.git --name sidecar
+

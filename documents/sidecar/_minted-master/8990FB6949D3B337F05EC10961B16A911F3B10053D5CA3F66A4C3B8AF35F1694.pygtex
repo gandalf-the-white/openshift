@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-  \PYGZdl{} oc get \PYGZhy{}\PYGZhy{}export is,bc,dc,svc \PYGZhy{}o yaml \PYGZgt{} export.yaml
-\end{Verbatim}

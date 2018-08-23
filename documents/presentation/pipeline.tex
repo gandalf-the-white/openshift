@@ -8,7 +8,7 @@
 \begin{figure}[ht]
   \caption{diagram of different projects}
   \centering
-  \includegraphics[scale=0.6]{ProjectPipelineDiagram.png}
+  \includegraphics[scale=0.5]{ProjectPipelineDiagram.png}
   \label{fig:ProjectPipelineDiagram}
 \end{figure}
 \end{frame}
@@ -60,9 +60,6 @@
   \end{bashcode}
 \end{frame}
 
-
-\subsection{Deploy Jenkins and Our Pipeline Definition}
-
 \begin{frame}[fragile]
   \frametitle{Jenkins}
   Deploy a Jenkins ephemeral instance in \textit{cicd} project
@@ -75,17 +72,18 @@
   \begin{bashcode}
     $ oc create -n cicd -f \
     https://raw.githubusercontent.com/devops-with-openshift\
-    /pipeline-configs/master/pipeline.yaml
+    /pipeline-configs/master/empty-pipeline.yaml
   \end{bashcode}
 \end{frame}
 
-\subsection{Deploy Our Sample Application}
 \begin{frame}[fragile]
   \frametitle{Jenkins}
+  Deployment of the application
   \begin{bashcode}
     $ oc project development
-    $ oc create new-app --name=cdnapi \
-    https://github.com/gandalf-the-white/faye.git
+    $ oc new-app \
+    https://github.com/gandalf-the-white/faye.git \
+    --name=cdnapi
     $ oc expose svc/cdnapi
   \end{bashcode}
 \end{frame}
@@ -93,7 +91,9 @@
 
 \begin{frame}[fragile]
   \frametitle{Jenkins}
+Deployment based on the \emph{Development image}
   \begin{bashcode}
+    $ oc get is -n development
     $ oc project testing
     $ oc create dc cdnapi \
     --image=172.30.1.1:5000/development/cdnapi:promoteQA
@@ -103,6 +103,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Patch}
+  Alway trigger a deployment when we tag a new image
   \begin{bashcode}
     $ oc patch dc/cdnapi -p \
     '{"spec":{"template":\
@@ -134,6 +135,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Patch}
+  Alway trigger a deployment when we tag a new image
   \begin{bashcode}
     $ oc patch dc/cdnapi -p \
     '{"spec":{"template":\
@@ -146,9 +148,17 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Expose}
+  \frametitle{Expose and create the service}
+  Expose the application and create a route
   \begin{bashcode}
     $ oc expose dc cdnapi --port=8080
     $ oc expose svc/cdnapi
+  \end{bashcode}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Run Our Pipeline Deployment}
+  \begin{bashcode}
+    $ oc start-build pipeline -n cicd
   \end{bashcode}
 \end{frame}

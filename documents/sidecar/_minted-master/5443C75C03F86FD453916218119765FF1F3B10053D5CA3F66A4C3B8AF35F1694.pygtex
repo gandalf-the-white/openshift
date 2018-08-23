@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-  \PYGZdl{} oc \PYG{n+nb}{set} build\PYGZhy{}secret \PYGZhy{}\PYGZhy{}source bc/faye github\PYGZhy{}secret
-  \PYGZdl{} oc start\PYGZhy{}build faye
-\end{Verbatim}
